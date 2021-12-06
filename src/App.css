@@ -1,0 +1,31 @@
+.main-theme{
+  background-color: #00a8e5 !important;
+  height: 10%;
+  
+}
+
+.sidebar:hover {
+  background-color: #0e153a;
+  color: #fff !important;
+  border-top-right-radius: 25px;
+  border-bottom-right-radius: 25px;
+}
+
+.btn {
+  border: 1px solid #00D2FC !important;
+}
+
+.table-action{
+  color: #00a8e5
+}
+
+.table-action:hover{
+  cursor: pointer;
+  text-decoration: underline;
+}
+
+
+
+
+
+
