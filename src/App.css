@@ -1,18 +1,33 @@
+.App{
+  width: 100%;
+}
+
+.content{
+  margin: 1em;
+  padding: 1em;
+  height: 100%;
+  overflow: auto;
+  background-color: white;
+}
+
+.sider{
+  background-color: white !important;
+}
+
+.logo{
+  height: 64px;
+  width: 100%;
+}
+
 .main-theme{
   background-color: #00a8e5 !important;
-  height: 10%;
-  
 }
 
 .sidebar:hover {
-  background-color: #0e153a;
+  background-color: #00a4e4;
   color: #fff !important;
   border-top-right-radius: 25px;
   border-bottom-right-radius: 25px;
-}
-
-.btn {
-  border: 1px solid #00D2FC !important;
 }
 
 .table-action{
@@ -22,6 +37,38 @@
 .table-action:hover{
   cursor: pointer;
   text-decoration: underline;
+}
+
+.button{
+  padding: 5px 15px ;
+  border: unset;
+  color: #00a8e5;
+  z-index: 1;
+  background: #e8e8e8;
+  position: relative;
+  /* font-weight: 500; */
+  font-size: 17px;
+  transition: all 250ms;
+}
+
+.button::before{
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  width: 0;
+  background-color: #00a8e5;
+  z-index: -1;
+  transition: all 250ms;
+}
+
+.button:hover{
+  color: #e8e8e8;
+}
+
+.button:hover::before{
+  width: 100%;
 }
 
 

@@ -10,21 +10,18 @@ import Footer from './component/dashboard/Footer'
 function App() {
   return (
     <div className="App">
-        <React.Fragment>
-          <Layout >
-              <Navbar />
+        
+          <Layout style={{height:'100vh'}}>
+              <Sidebar />
                 <Layout>
-                  <Sidebar />
-                  <Content />
-                  
-                </Layout>
-                <Layout>
-                  <Footer />
-                </Layout>  
-          </Layout>
-        </React.Fragment>
 
-      
+                  <Navbar />
+                  <Content />
+                  <Footer />
+                </Layout>
+                
+          </Layout>
+        
     </div>
   );
 }

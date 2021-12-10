@@ -1,5 +1,5 @@
 import React from 'react'
-import {Table,Row, Col, Space, Popconfirm} from 'antd'
+import {Table, Space, Popconfirm} from 'antd'
 import 'antd/dist/antd.css'
 import { useGetItem } from '../../hooks/useitem'
 
@@ -136,6 +136,7 @@ function IssueManagementTable({onDetail,loading,actions}) {
 
                     
                         <Table
+                            scroll={{x:2500,y:600}}
                             columns={columns}
                             dataSource={data}
                             loading={loading}

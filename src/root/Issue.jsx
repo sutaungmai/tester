@@ -3,7 +3,7 @@ import {Space,Drawer,Form,Button} from 'antd'
 import { useDetailItem, useGetItem, useMutateItem } from '../hooks/useitem';
 import ItemsForm from '../component/Open Issue/ItemsForm';
 import IssueManagementTable from '../component/Open Issue/IssueManagementTable';
-import axios from 'axios';
+
 // import IssueManagementTable from './IssueManagementTable'
 
 
@@ -30,17 +30,12 @@ function Issue({data}) {
 
     }, [mutateLoading,mutateSuccess])
 
-    
-  
-
     const onDetail = (data) => {
         showDetailForm(true)
         getItem(data.id)
-        
     }
 
     const handleCreate = data => {
-        
         const payload = {
             title: "",
             description: "",
@@ -58,30 +53,11 @@ function Issue({data}) {
             status: data.status
           }
         createItem(payload)
-        
     }
 
     const onshowEdit = data => {
-        const editload= {
-            id: data.id,
-            title: data.title,
-            description: data.description,
-            issues: data.issue,
-            sources: data.source,
-            department: data.department,
-            root_cause: data.root_cause,
-            issue_type: data.issue_type,
-            short_term_solution: data.long_term_solution,
-            long_term_solution: data.short_term_solution,
-            start_date: data.start_date,
-            close_date: data.close_date,
-            number_of_days: data.no_of_days,
-            priority: data.priority,
-            status: data.status
-        }
         showEditForm(true)
         getItem(data.id)
-        console.log(data)
     }
 
     const handleEdit = data => {
@@ -101,11 +77,12 @@ function Issue({data}) {
 
             <Space>
 
-                <Button type="primary" onClick={() => showNewForm(true)}>
-                    New
-                </Button>
+                <button className="button" onClick={()=> showNewForm(true)}>New</button>
 
             </Space>
+
+            
+            <p></p>
 
             <IssueManagementTable
                 onDetail={onDetail} 
@@ -122,7 +99,7 @@ function Issue({data}) {
             
             {/* Edit form */}
             <Drawer width={700} placement="right" onClose={() => showEditForm(false)} visible={editForm}>
-                <ItemsForm form={form} onSubmit={handleEdit} data={ data } />
+                <ItemsForm form={form} onSubmit={handleEdit} data={ item } />
             </Drawer>
             
             {/* Detail Form */}

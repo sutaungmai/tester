@@ -3,15 +3,16 @@ import React from 'react'
 
 function Sidebar() {
     return (
-        <div>
-            <React.Fragment>
-                <Layout.Sider
-                style={{
-                    overflow:'auto',
-                    height: '100vh',
-                }}
+        <div >
+            
+                <Layout.Sider 
+                    theme="light"
+                    style={{
+                        height: '100vh',
+                    }}
                 >
-                    <Menu >
+                    <div className="logo main-theme" ></div>
+                    <Menu  className="sider">
                         <Menu.Item className="sidebar">
                             OverView
                         </Menu.Item>
@@ -29,7 +30,7 @@ function Sidebar() {
                         </Menu.Item>
                     </Menu>
                 </Layout.Sider>
-            </React.Fragment>    
+              
         </div>
     )
 }

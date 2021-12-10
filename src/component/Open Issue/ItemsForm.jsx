@@ -1,16 +1,16 @@
 import React,{useEffect} from 'react'
 import {Form, Divider,Row,Col,Input,Button,DatePicker} from 'antd'
-import moment from 'moment'
+
 
 function ItemsForm({onSubmit,data}) {
     const [form] = Form.useForm()
 
-    useEffect(()=> form.setFieldsValue())
+    useEffect(()=> form.setFieldsValue({...data}))
 
     
 
     const handleSubmit = () => {
-        onSubmit(form.getFieldsValue())
+        onSubmit({...form.getFieldsValue()})
     }
 
     return (
